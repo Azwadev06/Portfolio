@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="section-title"><span class="number"></span> Where I've Worked</h2>
+    <div class="experience-content">
+      <div class="tabs">
+        <button 
+          *ngFor="let exp of experiences" 
+          class="tab-button" 
+          [ngClass]="{'active': selectedTab === exp.id}" 
+          (click)="selectTab(exp.id)">
+          {{ exp.company }}
+        </button>
+      </div>
+      <div class="tab-content">
+        <div *ngFor="let exp of experiences" class="tab-panel" [ngClass]="{'active': selectedTab === exp.id}">
+          <h3 class="job-title">{{ exp.title }} <span class="company">&#64; {{ exp.company }}</span></h3>
+          <p class="job-duration">{{ exp.period }}</p>
+          <ul class="job-responsibilities">
+            <li *ngFor="let responsibility of exp.responsibilities">{{ responsibility }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

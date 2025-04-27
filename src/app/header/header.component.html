@@ -1,0 +1,20 @@
+<header class="navbar" [ngClass]="{'scrolled': isScrolled}">
+    <div class="navbar-container">
+      <div class="logo">Azwa Shabbir </div>
+      <div class="menu-toggle" (click)="toggleMenu()">
+        <div class="hamburger" [ngClass]="{'active': isMenuOpen}">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-menu" [ngClass]="{'active': isMenuOpen}">
+          <a href="#home" (click)="scrollToSection('home')">Home</a>
+          <a href="#about" (click)="scrollToSection('about')">About</a>
+          <a href="#experience" (click)="scrollToSection('experience')">Experience</a>
+          <a href="#projects" (click)="scrollToSection('projects')">Projects</a>
+        </ul>
+      </nav>
+    </div>
+  </header>

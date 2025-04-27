@@ -1,0 +1,151 @@
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px 0 40px;
+    width: 100%;
+    font-size: clamp(26px, 5vw, var(--fz-heading));
+    white-space: nowrap;
+  
+    .number {
+      margin-right: 10px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+      font-weight: 400;
+    }
+  
+    &::after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 300px;
+      height: 1px;
+      margin-left: 20px;
+      background-color: var(--lightest-navy);
+    }
+  }
+  
+  .experience-content {
+    display: flex;
+    min-height: 340px;
+  }
+  
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    width: var(--tab-width);
+    margin-right: 25px;
+  }
+  
+  .tab-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--tab-height);
+    padding: 0 20px 2px;
+    border: none;
+    border-left: 2px solid var(--lightest-navy);
+    background-color: transparent;
+    color: var(--slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--transition);
+  
+    &.active {
+      color: var(--green);
+      border-left: 2px solid var(--green);
+    }
+  }
+  
+  .tab-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+  }
+  
+  .tab-panel {
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+    display: none;
+  
+    &.active {
+      display: block;
+    }
+  }
+  
+  .job-title {
+    font-size: var(--fz-xxl);
+    font-weight: 500;
+    margin-bottom: 5px;
+  
+    .company {
+      color: var(--green);
+    }
+  }
+  
+  .job-duration {
+    margin-bottom: 25px;
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+  }
+  
+  .job-responsibilities {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  
+    li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      font-size: var(--fz-lg);
+  
+      &::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--green);
+        font-size: var(--fz-sm);
+        line-height: 12px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .experience-content {
+      display: block;
+    }
+  
+    .tabs {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  
+    .tab-button {
+      flex-shrink: 0;
+      border-left: 0;
+      border-bottom: 2px solid var(--lightest-navy);
+  
+      &.active {
+        border-left: 0;
+        border-bottom: 2px solid var(--green);
+      }
+    }
+  }
